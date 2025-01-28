@@ -1,0 +1,39 @@
+.calcBody {
+    background-color: rgb(255, 190, 223);
+    width: 30rem;
+    border-style: double; 
+    border-color:rgb(173, 139, 171);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.screen {
+    background-color: rgb(80, 80, 80);
+    width: 95%;
+    height: 6rem;
+    border-radius: 20px;
+}
+
+.buttons{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.button {
+    background-color:rgb(255, 123, 200);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50px;
+    box-shadow: 10px 5px 5px rgb(134, 134, 218);
+    color:rgb(250, 196, 228);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    
+}
