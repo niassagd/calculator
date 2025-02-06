@@ -1,40 +1,32 @@
-function add(x,y) {
-    x = Number(x);
-    y = Number(y);
-    return x + y;
-}
-function subtract(x,y) {
-    x = Number(x);
-    y = Number(y);
-    return x - y;
-}
-function multiply(x,y) {
-    x = Number(x);
-    y = Number(y);
-    return x * y;
-}
-function divide(x,y) {
-    x = Number(x);
-    y = Number(y);
-    return x / y;
-}
-
 let a = "0";
 let b = "";
 let operator = "";
 
-
-
+//performs operations with operators and operand
 function operate(operator, a, b) {
+    let result;
+    a = Number(a);
+    b = Number(b);
+
     if (operator === "+") {
-        return add(a, b);
+        result = a + b;
     } else if (operator === "-") {
-        return subtract(a, b);
+        result = a - b;
     } else if (operator === "*") {
-        return multiply(a, b);
+        result = a * b;
     } if (operator === "/") {
-        return divide(a, b);
+        result = a / b;
     } 
+        //turns num result into string
+    result = Math.abs(result).toString();
+        
+        //removes extra decimals
+            if (result.includes(".")) {
+                return result.substring(0,10);
+            } else {
+                return result;
+            }
+        
 }
 
 
@@ -110,7 +102,8 @@ equalButton.addEventListener("click", () => {
         b = "";
         operator = "";
     } else {
-        display.textContent = operate(operator, a, b);
+        
+        display.textContent = operate(operator, a , b);
         a = "0";
         b = "";
         operator = "";
