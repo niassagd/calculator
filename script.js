@@ -178,15 +178,25 @@ equalButton.addEventListener("click", () => {
     
 // backbutton
 
-// const backButton = document.querySelector(".backbtn");
+const backButton = document.querySelector(".backbtn");
 
-// backButton.addEventListener("click", () => {
-//         if (display.textContent = b) {
-            
-//         } else if (display.textContent = a) {
-            
-//         } 
-//     });
+backButton.addEventListener("click", () => {
+        if (display.textContent = b) {
+            if (b.length > 1) {
+                b = b.substring(0, b.length-1);
+            } else {
+                b = "0";
+            }
+        display.textContent = b;
+        } else if (display.textContent = a) {
+            if (a.length > 1) {
+                a = a.substring(0, a.length -1);
+            } else {
+                a = "0";
+            }
+        display.textContent = a;
+        }
+    });
 
 
 
