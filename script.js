@@ -24,7 +24,7 @@ function operate(operator, a, b) {
     } else {
         positive = false;
     }
-
+    console.log(`${a} ${operator} ${b} = ${result}`);
     let resultString = Math.abs(result).toString();
 
         //removes extra decimals
