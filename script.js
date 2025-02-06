@@ -5,6 +5,7 @@ let operator = "";
 //performs operations with operators and operand
 function operate(operator, a, b) {
     let result;
+    let positive;
     a = Number(a);
     b = Number(b);
 
@@ -18,11 +19,33 @@ function operate(operator, a, b) {
         result = a / b;
     } 
         //turns num result into string
-    result = Math.abs(result).toString();
-        
+    if (result >= 0) {
+        positive = true;
+    } else {
+        positive = false;
+    }
+
+    let resultString = Math.abs(result).toString();
+
         //removes extra decimals
-            if (result.includes(".")) {
-                return result.substring(0,10);
+            //if result is > 999999999
+            if (resultString.length > 10 && !resultString.includes(".")) {
+                return "ERR";
+            //if result includes "."
+            } else if (resultString.includes(".")) {
+                let shortResult = resultString.substring(0, resultString.indexOf("."));
+                //if result is > 999999999
+                if (shortResult.length > 10) {
+                    console.log(result);
+                    console.log(shortResult);
+                    return "ERR";
+                } 
+                //if result is < 999999999 with a decimal
+                else if (positive === true) {
+                    return resultString.substring(0,10);
+                } else if (positive === false) {
+                    return resultString.substring(0,10) * -1;
+                }
             } else {
                 return result;
             }
