@@ -59,36 +59,56 @@ const numButtons = document.querySelectorAll(".numbtn");
 
     numButtons.forEach(button => {
     button.addEventListener("click", () => {
+
         if (operator != "") {
             if (display.textContent = b && b.length >= 10) {
-                display.textContent = b;
+                
             } else if(b === "0") {
                 b = button.textContent;
-                display.textContent = b;
+            
+            } else if (display.textContent = b && b.includes(".")) {
+                b += button.textContent;
+                    if (b.charAt(b.length-1) === ".") {
+                        b = b.substring(0, b.length-1);
+                    } 
             } else if (display.textContent = b) {
                 b += button.textContent;
                 b = b.substring(0, 10);
-                display.textContent = b;
             } else if (display.textContent = a) {
                 b = "0";
                 b = button.textContent;
-                display.textContent = b;
             } else {
                 b = "0";
                 b = button.textContent;
-                display.textContent = b;
             }
+                if (b === "00") {
+                    b = "0";
+                }
+                
+                display.textContent = b;
+                
+            
         } else {
             if (display.textContent = a && a.length >= 10) {
-                display.textContent = a;
+
             } else if(display.textContent = a && a === "0") {
                 a = button.textContent;
-                display.textContent = a;
+            } else if (display.textContent = a && a.includes(".")) {
+                a += button.textContent;
+                    if (a.charAt(a.length-1) === ".") {
+                        a = a.substring(0, a.length-1);
+                    }
             } else if (display.textContent = a) {
                 a += button.textContent;
-                a = a.substring(0, 10);
-                display.textContent = a;
             }
+                a = a.substring(0, 10);
+
+                if (a === "00") {
+                    a = "0";
+                } 
+                
+                display.textContent = a;
+                
         }
       });
     })
