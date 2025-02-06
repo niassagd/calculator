@@ -33,15 +33,30 @@ button {
     background-color:rgb(255, 97, 189);
     width: 5rem;
     height: 5rem;
-    border-radius: 5px;
+    border-radius: 25px;
     box-shadow: 5px 5px 5px rgba(87, 25, 84, 0.651);
     color:rgb(255, 237, 248);
     border-color: rgb(211, 77, 155);
     font-size: 3rem;
     border-width: .25rem;
-    border-style: inset;
-    
+    border-style: inset;   
 }
+
+button:active {
+    background-color:rgb(153, 47, 103);
+    box-shadow: 1px 1px 1px rgba(87, 25, 84, 0.651);
+    border-width: .5rem;
+    border-style: inset;
+}
+
+button.operand:active {
+    background-color:rgb(189, 118, 156);
+}
+
+button.operator:active {
+    background-color:rgb(173, 75, 131);
+}
+
 .operand {
     background-color: rgb(250, 158, 207);
 }
