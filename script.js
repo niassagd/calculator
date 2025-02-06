@@ -98,16 +98,23 @@ const numButtons = document.querySelectorAll(".numbtn");
       });
     })
 
-    //Equal Button;
+//Equal Button
 const equalButton = document.querySelector(".equalbtn");
 
 equalButton.addEventListener("click", () => {
-    
-    display.textContent = operate(operator, a, b);
-    a = "0";
-    b = "";
-    operator = "";
-    
+    if (b === "" && operator === "") {
+        display.textContent = a;
+    } else if (operator === "/" && b === "0") {
+        display.textContent = "LOL"
+        a = "0";
+        b = "";
+        operator = "";
+    } else {
+        display.textContent = operate(operator, a, b);
+        a = "0";
+        b = "";
+        operator = "";
+    }
 });
 
 //AC Button returns operator and b to undefined and returns a;
