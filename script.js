@@ -12,7 +12,7 @@ function divide(x,y) {
 }
 
 let a = "0";
-let b;
+let b ;
 let operator;
 
 
@@ -29,16 +29,19 @@ function operate(operator, a, b) {
     } 
 }
 
-const buttons = document.querySelectorAll(".btn");
 
-    buttons.forEach(button => {
+//Enters numbers when number buttons are clicked
+
+const numButtons = document.querySelectorAll(".numbtn");
+
+    numButtons.forEach(button => {
     button.addEventListener("click", () => {
-        if (a.length >= 10) {
-
-        } else if(a === "0") {
+        if (display.textContent = a && a.length >= 10) {
+            display.textContent = a;
+        } else if(display.textContent = a && a === "0") {
             a = button.textContent;
             display.textContent = a;
-        } else {
+        } else if (display.textContent = a) {
             a += button.textContent;
             a = a.substring(0, 10);
             display.textContent = a;
@@ -46,7 +49,38 @@ const buttons = document.querySelectorAll(".btn");
       });
     })
 
+//Changes the operator according to operator button clicked
+    const opButtons = document.querySelectorAll(".opbtn");
 
+    opButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        operator = button.textContent;
+      });
+    })
+
+//AC Button returns b and operator to undefined and returns a = 0
+    const acButton = document.querySelector(".acbtn");
+
+    acButton.addEventListener("click", () => {
+            a = "0";
+            b = "";
+            operator = "";
+            display.textContent = a;
+        });
+
+//AC Button returns b and operator to undefined and returns a = 0
+    const ceButton = document.querySelector(".cebtn");
+
+    ceButton.addEventListener("click", () => {
+            if( display.textContent = a) {
+                a = 0;
+                display.textContent = a;
+            } else {
+                b = 0;
+                display.textContent = b;
+            }
+        });
+    
 
 const screen = document.querySelector("#screen");
 const display = document.createElement("div");
